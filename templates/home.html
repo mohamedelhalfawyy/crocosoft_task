@@ -45,7 +45,7 @@
         }
 
         button[type=submit] {
-            background-color: darkblue;
+            background-color: mediumseagreen;
             color: white;
             padding: 14px 20px;
             margin: 8px 0 0 10px;
@@ -55,7 +55,7 @@
         }
 
         button[type=submit]:hover {
-            background-color: #45a049;
+            background-color: darkgreen;
         }
 
         .container {
@@ -103,11 +103,11 @@
                 <td>{{ user[3] }}</td>
                 <td>
                     <div class="btn-group">
-                        <form method="post" action="/delete_customer">
+                        <form method="post" action="/delete_customer" class="delete-button">
                             <input type="hidden" name="customer_id" value="{{ user[0] }}">
                             <button type="submit">Delete</button>
                         </form>
-                        <form method="get" action="/update">
+                        <form method="get" action="/update" class="update-button">
                             <input type="hidden" name="customer_id" value="{{ user[0] }}">
                             <button type="submit">Update</button>
                         </form>
