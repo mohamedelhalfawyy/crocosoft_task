@@ -28,3 +28,10 @@ def update_customer(customer_id, name, phone, address):
     values = (name, phone, address, customer_id)
     cursor.execute(query, values)
     db.commit()
+
+
+# function to delete a contact from the database
+def delete_customer(customer_id):
+    # Delete the contact from the database
+    cursor.execute("DELETE FROM customer WHERE Customer_ID = %s", (customer_id,))
+    db.commit()

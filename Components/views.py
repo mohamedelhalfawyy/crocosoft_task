@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, render_template
 
-from Controller.customer import get_customers, add_customer, update_customer
+from Controller.customer import get_customers, add_customer, update_customer, delete_customer
 
 app = Flask(__name__, template_folder='../templates/')
 
@@ -38,3 +38,13 @@ def update():
 
     update_customer(customer_id, name, phone, address)
     return redirect("/")
+
+
+# Define a route to delete a user
+@app.route('/delete_customer', methods=['POST'])
+def delete():
+    # Get the ID of the contact to delete from the form data
+    customer_id = request.form['customer_id']
+
+    delete_customer(customer_id)
+    return redirect('/')
