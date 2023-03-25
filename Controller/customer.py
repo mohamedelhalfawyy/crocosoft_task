@@ -20,3 +20,11 @@ def add_customer(name, phone, address):
     val = (name, phone, address)
     cursor.execute(sql, val)
     db.commit()
+
+
+# function to update a contact in the database
+def update_customer(customer_id, name, phone, address):
+    query = "UPDATE customer SET Name = %s, Phone_Number = %s, Address = %s WHERE Customer_ID = %s"
+    values = (name, phone, address, customer_id)
+    cursor.execute(query, values)
+    db.commit()
